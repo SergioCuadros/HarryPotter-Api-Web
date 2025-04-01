@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Character} from "../types/harryPotterTypes";
+import { Character, SpellsData} from "../types/harryPotterTypes";
 
 const BASE_URL = "https://hp-api.onrender.com/api";
 
@@ -23,5 +23,14 @@ export const getCharacterById = async (id: string): Promise<Character | null> =>
         console.error(error);
         return null;
         
+    }
+}
+export const getSpells = async (): Promise<SpellsData[]> => {
+    try {
+        const response = await axios.get(`${BASE_URL}/spells`);
+        return response.data;
+    } catch (error) {
+        console.error(error);
+        return [];
     }
 }

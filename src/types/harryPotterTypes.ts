@@ -24,3 +24,10 @@ export interface Character {
     alive: boolean;
     image: string;
   }
+
+  export interface SpellsData {
+    id: string;
+    name: string;
+    description: string;
+
+  }
