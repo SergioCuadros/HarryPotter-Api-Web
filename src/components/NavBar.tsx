@@ -1,81 +1,97 @@
-import { Link } from 'react-router-dom'
-import { Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/react'    
-import { Bars3Icon,XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from "react-router-dom";
+import LogoItemHp from "../assets/img/harry-potter-svgrepo-com.svg";
+import SombreroItem from "../assets/img/sombrero.svg";
+import VaritaItem from "../assets/img/wand-svgrepo-com.svg";
+import { ThemeSelector } from "./ThemeSelector.tsx";
 
 const navigation = [
-  { name: 'Hey', href: '/hp', current: true },
-  { name: 'Characters', href: '/characters', current: false },
-  { name: 'Spells', href: '/spells', current: false },
-]
+  { name: "Hey", href: "/hp", current: true, img: SombreroItem },
+  { name: "Characters", href: "/characters", current: false, img: LogoItemHp },
+  { name: "Spells", href: "/spells", current: false, img: VaritaItem },
+];
 
 const LogoItem = {
- name: 'Logo', 
- href: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/HP_-_Harry_Potter_wordmark.svg'
-}
-   
-
+  name: "Logo",
+  href: "https://upload.wikimedia.org/wikipedia/commons/9/9b/HP_-_Harry_Potter_wordmark.svg",
+};
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export const NavBar = () => {
   return (
-    <Disclosure as="nav" className="bg-neutral-500">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
-              <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
-              <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" />
-            </DisclosureButton> 
-          </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex shrink-0 items-center">
-              <img
-                alt={LogoItem.name}
-                src={LogoItem.href}
-                className="h-8 w-auto"
-              />
-            </div>
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
-                {navigation.map((item) => (
-                    <Link
-                    key={item.name}
-                    to={item.href}
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
-          {navigation.map((item) => (
-            <DisclosureButton
-              key={item.name}
-              as="a"
-              href={item.href}
-              aria-current={item.current ? 'page' : undefined}
-              className={classNames(
-                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                'block rounded-md px-3 py-2 text-base font-medium',
-              )}
+    <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              {item.name}
-            </DisclosureButton>
-          ))}
+              {" "}
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />{" "}
+            </svg>
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          >
+            {navigation.map((item) => (
+              <li key={item.name}>
+                <Link
+                  to={item.href}
+                  className={classNames(
+                    item.current ? "text-hogwarts-gold" : "text-base-content",
+                    "btn btn-ghost text-xl"
+                  )}
+                >
+                  <img
+                    src={item.img}
+                    className="w-10 h-10 mr-2"
+                    alt={`${item.name} icon`}
+                  />
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-      </DisclosurePanel>
-    </Disclosure>
-  )
-}
+        <img src={LogoItem.href} className="btn btn-ghost text-xl"></img>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          {navigation.map((item) => (
+            <li key={item.name}>
+              <Link
+                to={item.href}
+                className={classNames(
+                  item.current ? "text-hogwarts-gold" : "text-base-content",
+                  "btn btn-ghost text-xl"
+                )}
+              >
+                <img
+                  src={item.img}
+                  className="w-10 h-10 mr-2"
+                  alt={`${item.name} icon`}
+                />
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="navbar-end">
+        <ThemeSelector />
+      </div>
+    </div>
+  );
+};

@@ -1,15 +1,13 @@
-import { useState, useEffect } from 'react';
-import { getCaharacters } from '../data/hpApi'
-import { Character } from '../types/harryPotterTypes';
-import CharacterList from '../components/CharacterList';
-
-
+import { useState, useEffect } from "react";
+import { getCaharacters } from "../data/hpApi";
+import { Character } from "../types/harryPotterTypes";
+import CharacterList from "../components/CharacterList";
 
 export const CharacterView = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectHouse, setSelectHouse] = useState<string>('');
+  const [selectHouse, setSelectHouse] = useState<string>("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,7 +16,9 @@ export const CharacterView = () => {
         setCharacters(data);
         setLoading(false);
       } catch (err) {
-        setError('Error al cargar los personajes. Por favor, intenta nuevamente.');
+        setError(
+          "Error al cargar los personajes. Por favor, intenta nuevamente."
+        );
         setLoading(false);
       }
     };
@@ -27,10 +27,12 @@ export const CharacterView = () => {
   }, []);
 
   const handleHouseChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectHouse(e.target.value)
-  }
+    setSelectHouse(e.target.value);
+  };
 
-  const filteredCharacters = selectHouse ? characters.filter(character => character.house === selectHouse) : characters;
+  const filteredCharacters = selectHouse
+    ? characters.filter((character) => character.house === selectHouse)
+    : characters;
 
   if (loading) {
     return (
@@ -51,38 +53,28 @@ export const CharacterView = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-stone-500 to-stone-700">
-      <header className="bg-hogwarts-blue text-white py-6 shadow-md">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center">Personajes de Harry Potter</h1>
-          <p className="text-center mt-2 text-hogwarts-gold">
-            Explora el universo mágico de Harry Potter
-          </p>
-        </div>
-      </header>
-
-      <div className='container mx-auto px-4 py-4'>
-        <div className='mb-6'>
-            <label htmlFor='house' className='block text-gray-700 font-bold mb-2'>Filtrar por casa:</label>
-            <select
-                id='house'
-                name='house'
-                value={selectHouse}
-                onChange={handleHouseChange}
-                className='block w-full p-2 border border-gray-300 rounded bg-white shadow-sm focus:outline-none focus:border-hogwarts-blue focus:ring focus:ring-hogwarts-blue'
-            >
-                <option value=''>Todas las casas</option>
-                <option value='Gryffindor'>Gryffindor</option>
-                <option value='Slytherin'>Slytherin</option>
-                <option value='Hufflepuff'>Hufflepuff</option>
-                <option value='Ravenclaw'>Ravenclaw</option>
-            </select>
+    <>
+      <div className="container mx-auto px-4 py-4">
+        <div className="mb-6">
+          <select
+            className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+            id="house"
+            name="house"
+            value={selectHouse}
+            onChange={handleHouseChange}
+          >
+            <option value="">Todas las casas</option>
+            <option value="Gryffindor">Gryffindor</option>
+            <option value="Slytherin">Slytherin</option>
+            <option value="Hufflepuff">Hufflepuff</option>
+            <option value="Ravenclaw">Ravenclaw</option>
+          </select>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto text-center">
         <CharacterList characters={filteredCharacters} />
       </div>
-    </div>
+    </>
   );
-}
+};

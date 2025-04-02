@@ -1,2 +1,90 @@
 @import "tailwindcss";
 
+@plugin "daisyui" {
+  themes: all; /* Habilita todos los temas */
+}
+
+@plugin "daisyui/theme" {
+  name: "gryffindor";
+  default: true; /* Tema por defecto */
+  
+  --color-base-100: #740001; /* Rojo oscuro */
+  --color-base-200: #ae0001; /* Rojo Gryffindor */
+  --color-base-300: #d3a625; /* Dorado Gryffindor */
+  --color-base-content: #ffffff; /* Texto en blanco */
+
+  --color-primary: #ae0001; /* Rojo */
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #d3a625; /* Dorado */
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #000000; /* Negro */
+  --color-accent-content: #ffffff;
+
+  --color-neutral: #222222;
+  --color-neutral-content: #ffffff;
+}
+
+@plugin "daisyui/theme" {
+  name: "slytherin";
+
+  --color-base-100: #1a472a; /* Verde oscuro */
+  --color-base-200: #2a623d; /* Verde Slytherin */
+  --color-base-300: #5d5d5d; /* Gris Slytherin */
+  --color-base-content: #ffffff;
+
+  --color-primary: #2a623d; /* Verde */
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #5d5d5d; /* Gris */
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #000000; /* Negro */
+  --color-accent-content: #ffffff;
+
+  --color-neutral: #222222;
+  --color-neutral-content: #ffffff;
+}
+
+@plugin "daisyui/theme" {
+  name: "ravenclaw";
+
+  --color-base-100: #0e1a40; /* Azul oscuro */
+  --color-base-200: #222f5b; /* Azul Ravenclaw */
+  --color-base-300: #946b2d; /* Bronce Ravenclaw */
+  --color-base-content: #ffffff;
+
+  --color-primary: #222f5b; /* Azul */
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #946b2d; /* Bronce */
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #000000; /* Negro */
+  --color-accent-content: #ffffff;
+
+  --color-neutral: #222222;
+  --color-neutral-content: #ffffff;
+}
+
+@plugin "daisyui/theme" {
+  name: "hufflepuff";
+
+  --color-base-100: #ffc500; /* Amarillo */
+  --color-base-200: #ffdb58; /* Amarillo Hufflepuff */
+  --color-base-300: #60605c; /* Gris Hufflepuff */
+  --color-base-content: #000000;
+
+  --color-primary: #ffdb58; /* Amarillo */
+  --color-primary-content: #000000;
+
+  --color-secondary: #60605c; /* Gris */
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #000000; /* Negro */
+  --color-accent-content: #ffffff;
+
+  --color-neutral: #222222;
+  --color-neutral-content: #ffffff;
+}
