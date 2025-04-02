@@ -15,7 +15,7 @@ const CharacterList: React.FC<CharacterListProps> = ({ characters }) => {
       case 'Hufflepuff':
         return 'bg-yellow-100 border-yellow-400 text-yellow-800';
       case 'Ravenclaw':
-        return 'bg-blue-100 border-blue-400 text-blue-800' ;
+        return 'bg-blue-100 border-blue-400 text-blue-800';
       default:
         return 'bg-gray-100 border-gray-400 text-gray-800';
     }
@@ -30,7 +30,7 @@ const CharacterList: React.FC<CharacterListProps> = ({ characters }) => {
       {characters.map((character) => (
         <div
           key={character.id}
-          className=" rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-slate-100" 
+          className=" rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-slate-100"
         >
           <div className="p-4">
             <div className="flex items-center mb-4">

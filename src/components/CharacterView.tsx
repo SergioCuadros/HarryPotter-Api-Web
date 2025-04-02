@@ -6,7 +6,6 @@ import CharacterList from '../components/CharacterList';
 
 
 export const CharacterView = () => {
-
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);

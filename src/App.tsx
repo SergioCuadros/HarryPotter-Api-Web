@@ -18,10 +18,6 @@ function App() {
           <Route path="/Spells" element={<SpellsView />} />
         </Routes>
       </Router>
-
-      <HpView />
-      <HpView />
-      <HpView />
     </>
   )
 }
