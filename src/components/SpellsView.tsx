@@ -42,18 +42,10 @@ export const SpellsView = () => {
         );
     }
     return (
-        <div className="min-h-screen bg-gradient-to-r from-stone-500 to-stone-700">
-            <header className="bg-hogwarts-blue text-white py-6 shadow-md">
-                <div className="container mx-auto px-4">
-                    <h1 className="text-4xl font-bold text-center">Hechizos de Harry Potter</h1>
-                    <p className="text-center mt-2 text-hogwarts-gold">
-                        Explora el universo mágico de Harry Potter
-                    </p>
-                </div>
-            </header>
+
             <div className="container mx-auto px-4 py-8">
                 <SpellsList spells={spells}/>
             </div>
-        </div>
+
       );
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export  const ThemeSelector = () => {
-  const themes = ["light", "dark", "cupcake", "dracula", "business", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "luxury", "gryffindor", "slytherin", "hufflepuff", "ravenclaw"];
+  const themes = ["luxury", "gryffindor", "slytherin", "hufflepuff", "ravenclaw"];
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {

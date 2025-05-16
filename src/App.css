@@ -8,83 +8,119 @@
   name: "gryffindor";
   default: true; /* Tema por defecto */
   
-  --color-base-100: #740001; /* Rojo oscuro */
-  --color-base-200: #ae0001; /* Rojo Gryffindor */
-  --color-base-300: #d3a625; /* Dorado Gryffindor */
-  --color-base-content: #ffffff; /* Texto en blanco */
+  --color-base-100: oklch(24% 0.15 28);
+  --color-base-200: #FFC500;
+  --color-base-300: oklch(78% 0.18 90);
+  --color-base-content: oklch(98% 0 0);
 
-  --color-primary: #ae0001; /* Rojo */
-  --color-primary-content: #ffffff;
+  --color-primary: oklch(40% 0.21 28);
+  --color-primary-content: oklch(10% 0 0);
 
-  --color-secondary: #d3a625; /* Dorado */
-  --color-secondary-content: #ffffff;
+  --color-secondary: oklch(78% 0.18 90);
+  --color-secondary-content: oklch(10% 0 0);
 
-  --color-accent: #000000; /* Negro */
-  --color-accent-content: #ffffff;
+  --color-accent: oklch(0% 0 0);
+  --color-accent-content: oklch(98% 0 0);
 
-  --color-neutral: #222222;
-  --color-neutral-content: #ffffff;
+  --color-neutral: oklch(15% 0.02 30);
+  --color-neutral-content: oklch(98% 0 0);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 1rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
 
 @plugin "daisyui/theme" {
   name: "slytherin";
 
-  --color-base-100: #1a472a; /* Verde oscuro */
-  --color-base-200: #2a623d; /* Verde Slytherin */
-  --color-base-300: #5d5d5d; /* Gris Slytherin */
-  --color-base-content: #ffffff;
+  --color-base-100: oklch(25% 0.05 145);
+  --color-base-200: #5D5D5D;
+  --color-base-300: oklch(45% 0 0);
+  --color-base-content: oklch(98% 0 0);
 
-  --color-primary: #2a623d; /* Verde */
-  --color-primary-content: #ffffff;
+  --color-primary: oklch(35% 0.07 145);
+  --color-primary-content: oklch(10% 0 0);
 
-  --color-secondary: #5d5d5d; /* Gris */
-  --color-secondary-content: #ffffff;
+  --color-secondary: oklch(45% 0 0);
+  --color-secondary-content: oklch(98% 0 0);
 
-  --color-accent: #000000; /* Negro */
-  --color-accent-content: #ffffff;
+  --color-accent: oklch(0% 0 0);
+  --color-accent-content: oklch(98% 0 0);
 
-  --color-neutral: #222222;
-  --color-neutral-content: #ffffff;
+  --color-neutral: oklch(15% 0.02 145);
+  --color-neutral-content: oklch(98% 0 0);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 1rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
 
 @plugin "daisyui/theme" {
   name: "ravenclaw";
 
-  --color-base-100: #0e1a40; /* Azul oscuro */
-  --color-base-200: #222f5b; /* Azul Ravenclaw */
-  --color-base-300: #946b2d; /* Bronce Ravenclaw */
-  --color-base-content: #ffffff;
+  --color-base-100: oklch(20% 0.05 270);
+  --color-base-200: #946b2d;
+  --color-base-300: oklch(65% 0.1 70);
+  --color-base-content: oklch(98% 0 0);
 
-  --color-primary: #222f5b; /* Azul */
-  --color-primary-content: #ffffff;
+  --color-primary: oklch(30% 0.06 270);
+  --color-primary-content: oklch(10% 0 0);
 
-  --color-secondary: #946b2d; /* Bronce */
-  --color-secondary-content: #ffffff;
+  --color-secondary: oklch(65% 0.1 70);
+  --color-secondary-content: oklch(10% 0 0);
 
-  --color-accent: #000000; /* Negro */
-  --color-accent-content: #ffffff;
+  --color-accent: oklch(0% 0 0);
+  --color-accent-content: oklch(98% 0 0);
 
-  --color-neutral: #222222;
-  --color-neutral-content: #ffffff;
+  --color-neutral: oklch(15% 0.02 270);
+  --color-neutral-content: oklch(98% 0 0);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 1rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
 
 @plugin "daisyui/theme" {
   name: "hufflepuff";
 
-  --color-base-100: #ffc500; /* Amarillo */
-  --color-base-200: #ffdb58; /* Amarillo Hufflepuff */
-  --color-base-300: #60605c; /* Gris Hufflepuff */
-  --color-base-content: #000000;
+  --color-base-100: #EEB935; /* Amarillo */
+  --color-base-200: black; /* Amarillo claro */
+  --color-base-300: oklch(45% 0 0);      /* Gris Hufflepuff */
+  --color-base-content: oklch(10% 0 0);  /* Negro */
 
-  --color-primary: #ffdb58; /* Amarillo */
-  --color-primary-content: #000000;
+  --color-primary: oklch(94% 0.13 100);
+  --color-primary-content: oklch(10% 0 0);
 
-  --color-secondary: #60605c; /* Gris */
-  --color-secondary-content: #ffffff;
+  --color-secondary: oklch(45% 0 0);
+  --color-secondary-content: oklch(98% 0 0);
 
-  --color-accent: #000000; /* Negro */
-  --color-accent-content: #ffffff;
+  --color-accent: oklch(0% 0 0);
+  --color-accent-content: oklch(98% 0 0);
 
-  --color-neutral: #222222;
-  --color-neutral-content: #ffffff;
+  --color-neutral: oklch(15% 0.02 60);
+  --color-neutral-content: oklch(98% 0 0);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 1rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }

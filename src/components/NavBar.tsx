@@ -32,13 +32,12 @@ export const NavBar = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
           <ul
@@ -56,7 +55,10 @@ export const NavBar = () => {
                 >
                   <img
                     src={item.img}
-                    className="w-10 h-10 mr-2"
+                    className={classNames(
+                      "w-10 h-10 mr-2",
+                      item.current ? "filter brightness-0 invert" : ""
+                    )}
                     alt={`${item.name} icon`}
                   />
                   {item.name}
@@ -65,7 +67,7 @@ export const NavBar = () => {
             ))}
           </ul>
         </div>
-        <img src={LogoItem.href} className="btn btn-ghost text-xl"></img>
+        <img src={LogoItem.href} className="btn btn-ghost text-xl" alt="Logo" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -80,7 +82,10 @@ export const NavBar = () => {
               >
                 <img
                   src={item.img}
-                  className="w-10 h-10 mr-2"
+                  className={classNames(
+                    "w-10 h-10 mr-2",
+                    item.current ? "filter brightness-0 invert" : ""
+                  )}
                   alt={`${item.name} icon`}
                 />
                 {item.name}
