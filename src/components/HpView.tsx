@@ -10,7 +10,7 @@ export const HpView = () => {
           </div>
           <div className="diff-item-2" role="img">
             <div className="bg-base-200 grid place-content-center text-9xl font-black">
-              HARRY POTTER
+              HARRY POTTER DATA WEB
             </div>
           </div>
           <div className="diff-resizer"></div>
