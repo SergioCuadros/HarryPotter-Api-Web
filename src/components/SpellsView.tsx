@@ -15,7 +15,8 @@ export const SpellsView = () => {
                 const data = await getSpells();
                 setSpells(data);
                 setLoading(false);
-            } catch (err) {
+            } catch (error) {
+                console.error("Error fetching characters:", error);
                 setError('Error al cargar los hechizos. Por favor, intenta nuevamente.');
                 setLoading(false);
             }

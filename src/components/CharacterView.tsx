@@ -15,7 +15,8 @@ export const CharacterView = () => {
         const data = await getCaharacters();
         setCharacters(data);
         setLoading(false);
-      } catch (err) {
+      } catch (error) {
+        console.error("Error fetching characters:", error);
         setError(
           "Error al cargar los personajes. Por favor, intenta nuevamente."
         );
